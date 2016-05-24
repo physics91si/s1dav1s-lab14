@@ -1,0 +1,6 @@
+Initial program performance (runtime, bottlenecks, scaling with n):
+
+Fix 1:
+New program performance:
+
+etc.
