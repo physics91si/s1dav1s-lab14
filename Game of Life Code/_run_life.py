@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
 def run_life(board, update, n, plot=False):
-    n_steps = 20
+    n_steps = 10
     if plot:
         fig = plt.figure()
         im = plt.imshow(board, interpolation='nearest')

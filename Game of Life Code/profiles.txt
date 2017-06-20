@@ -1,6 +1,27 @@
 Initial program performance (runtime, bottlenecks, scaling with n):
 
-Fix 1:
-New program performance:
+cProfile.run('re.compile("life")')–100 loops, best of 3: 3.47 ms per loop
 
-etc.
+cProfile.run('re.compile("is_neighbor")')–100 loops, best of 3: 4.11 ms per loop
+
+cProfile.run("life.life(n=5,plot=True)")–89665 function calls (88370 primitive calls) in 0.211 seconds
+
+cProfile.run("life.life(n=5,plot=False)")–32072 function calls in 0.012 seconds
+ 
+
+cProfile.run("life.life(n=10,plot=False)")–458147 function calls in 0.212 seconds
+
+cProfile.run("life.life(n=10,plot=True)")–89726 function calls (88431 primitive calls) in 0.238 seconds
+
+
+Adjustment 1: Changed range to xrange for big loops
+cProfile.run('re.compile("life")')
+unbalanced
+100 loops, best of 3: 4.26 ms per loop
+unbalanced
+100 loops, best of 3: 4.54 ms per loop
+
+After balanced xrange adjustment in a function
+100 loops, best of 3: 4.08 ms per loop
+
+Adjustment 2: replace for loops?

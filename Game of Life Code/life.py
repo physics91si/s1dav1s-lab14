@@ -34,8 +34,8 @@ def update(board, n):
                     next_board[i][j] = 0
 
     # Copy the next board into the current board
-    for i in range(n):
-        for j in range(n):
+    for i in xrange(n):
+        for j in xrange(n):
             board[i][j] = next_board[i][j]
 
 def get_n_alive_neighbors(board, n, i, j):
